@@ -20,7 +20,7 @@ SQL (MySQL) + Power BI
 
 | File | Description |
 |---|---|
-| [01_setup_and_load.sql](01_setup_and_load.sql) | Database setup, data import, profiling, indexes |
+| [01_setup_and_load.sql](01Setup_and_load.sql) | Database setup, data import, profiling, indexes |
 | [02_create_two_systems.sql](02_create_two_systems.sql) | Creates the Payment Gateway vs Bank Settlement table pair |
 | [03_data_corruption.sql](03_data_corruption.sql) | Injects realistic data quality issues into the Bank system |
 | [04_business_key_and_reconciliation.sql](04_business_key_and_reconciliation.sql) | Builds the shared business key and runs core reconciliation checks |
