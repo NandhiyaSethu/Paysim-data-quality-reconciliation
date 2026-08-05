@@ -34,8 +34,6 @@ version of this project included `amount` in the key, which caused genuine
 amount mismatches to be misclassified as "missing" records (since changing the
 amount changed the key itself). This was identified and corrected — a good
 example of why business keys should only use immutable, identifying fields. 
-And I have ran update of leading and trailing spaces twice by mistake so 
-mismatches will be greater than 500 because of double trailing space.
 
 ## Key Findings
 
