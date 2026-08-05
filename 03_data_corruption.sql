@@ -59,7 +59,7 @@ WHERE RAND() < 0.02;
 -- 3954 rows affected
 
 ### Leading / Trailing Spaces
-
+--updated twice
 UPDATE bank_system
 SET type = CONCAT('  ', type, '  ')
 WHERE RAND() < 0.02;
