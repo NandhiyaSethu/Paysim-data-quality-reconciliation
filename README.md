@@ -53,6 +53,9 @@ example of why business keys should only use immutable, identifying fields.
 See `/powerbi/reconciliation_dashboard.pbix` and `/screenshots/` for the final
 Power BI dashboard covering: Overview KPIs, Exception Breakdown, Severity
 Distribution, Drill-through Detail, and Trend over time.
+<img width="1920" height="1080" alt="Screenshot (52) (1)" src="https://github.com/user-attachments/assets/540194d8-8ee9-4128-8a51-fe6c7c85d8e5" />
+<img width="1920" height="1080" alt="Screenshot (53) (1)" src="https://github.com/user-attachments/assets/ca91d71d-01fa-494b-a1a6-930ce3082434" />
+
 
 ## Documentation
 - [Data Dictionary](documentation/Data_Dictionary.md)
