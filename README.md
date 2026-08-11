@@ -4,7 +4,7 @@
 As a Data Analyst supporting a digital payments company, this project validates
 whether transactions recorded by a **Payment Gateway** system agree with the
 same transactions recorded by a **Bank Settlement** system, identifies where
-they diverge, and quantifies the scale and severity of each type of break.
+they diverge, and quantifies the scale and severity of each type of break, and reports a reconciliation rate — the kind of check a Finance/Risk Ops team relies on daily.
 
 ## Dataset
 - Source: [PaySim — Synthetic Financial Datasets for Fraud Detection (Kaggle)](https://www.kaggle.com/datasets/ealaxi/paysim1)
@@ -20,12 +20,24 @@ SQL (MySQL) + Power BI
 
 | File | Description |
 |---|---|
-| [01_setup_and_load.sql](01Setup_and_load.sql) | Database setup, data import, profiling, indexes |
-| [02_create_two_systems.sql](02_create_two_systems.sql) | Creates the Payment Gateway vs Bank Settlement table pair |
-| [03_data_corruption.sql](03_data_corruption.sql) | Injects realistic data quality issues into the Bank system |
-| [04_business_key_and_reconciliation.sql](04_business_key_and_reconciliation.sql) | Builds the shared business key and runs core reconciliation checks |
-| [05_exception_report.sql](05_exception_report.sql) | Consolidated exception report with severity ratings |
-| [06_reporting_views.sql](07_reporting_views.sql) | Power BI–ready summary and detail views |
+paysim-data-quality-reconciliation/
+├── README.md
+├── sql/
+│   ├── [01_setup_and_load.sql](01Setup_and_load.sql) | Database setup, data import, profiling, indexes |
+│   ├── [02_create_two_systems.sql](02_create_two_systems.sql) | Creates the Payment Gateway vs Bank Settlement table pair |
+│   ├── [03_data_corruption.sql](03_data_corruption.sql) | Injects realistic data quality issues into the Bank system |
+│   ├── [04_business_key_and_reconciliation.sql](04_business_key_and_reconciliation.sql) | Builds the shared business key and runs core reconciliation checks |
+│   ├── [05_exception_report.sql](05_exception_report.sql) | Consolidated exception report with severity ratings |
+│   ├── [06_reporting_views.sql](07_reporting_views.sql) | Power BI–ready summary and detail views |
+├── documentation/
+│   ├── Data_Dictionary.md
+│   ├── Business_Rules.md
+│   └── Corruption_Log.md
+├── powerbi/
+│   └── Paysim_reconciliation_dashboard.pbix
+└── screenshots/
+    ├── overview_page.png
+    └── exception_details_page.png
 
 ## Key Design Decision: The Business Key
 The join key between the two systems (`business_txn_id`) is built from
@@ -39,15 +51,25 @@ example of why business keys should only use immutable, identifying fields.
 
 | Metric | Value |
 |---|---|
-| Total transactions (Payment System) | 200,000 |
+| Total transactions (Payment System) | 2,00,000 |
+| Total transactions (Bank System) | 1,99,800 |
+| Matched Transactions | 198,692 |
 | Missing in Bank System | 910 |
 | Amount Mismatches | 398 |
-| Null Amounts (Bank) | 381 |
+| Total Exceptions (all rule violations) | 	18,258 |
+
+## Exception Type Breakdown
+
+| Rule Violated | Value |
+|---|---|
+| Null Amount in Bank | 381 |
 | Null nameOrig (Bank) | 411 |
-| Invalid Type Values | 203 |  ----
-| Duplicate Transactions | 274 |
-| Casing/Whitespace Issues | ~7,800 |
-| Reconciliation Rate | 99.31 |
+| Invalid Type Value | 8,110 |  
+| Duplicate Transaction | ~ 284 |
+| Inconsistent Casing/Whitespace | ~7,911 |
+| Missing in Bank System | 910 |
+| Amount Mismatch | 398 |
+
 
 ## Dashboard
 See /dashboard/ and `/screenshots/` for the final
