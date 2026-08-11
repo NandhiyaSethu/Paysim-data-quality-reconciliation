@@ -19,7 +19,7 @@ and `sql/05_exception_report.sql`.
 11. `step` must be a positive integer within the simulation's valid range.
 
 ## Consistency / Formatting
-12. `type` values must use consistent casing (no lowercase or mixed case entries).
+12. `type` values must use consistent casing (no lowercase or mixed case entries)
 13. `type` and ID fields must have no leading or trailing whitespace.
 
 ## Uniqueness
