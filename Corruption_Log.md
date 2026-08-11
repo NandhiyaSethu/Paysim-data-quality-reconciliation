@@ -36,8 +36,7 @@ independent systems recording the same events.
 | Missing in Bank System (via business key) | 910 |
 | Amount Mismatch | 398 |
 | Null Amount | 381 |
-| Null nameOrig | 411 |
-| Duplicate Transaction | 274 |
+| Duplicate Transaction | 548 |
 | Invalid Type Value | 8,110 |
 | Inconsistent Casing/Whitespace | 7,911 |
 | **Total exception rows (exception_report_enhanced)** | **18,258** |
