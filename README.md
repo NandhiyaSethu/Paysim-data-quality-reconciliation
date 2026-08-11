@@ -23,13 +23,12 @@ SQL (MySQL) + Power BI
 paysim-data-quality-reconciliation/
 ├── README.md
 ├── sql/
-│   ├── 01_setup_and_load.sql
+│   ├── 01Setup_and_load.sql
 │   ├── 02_create_two_systems.sql
 │   ├── 03_data_corruption.sql
 │   ├── 04_business_key_and_reconciliation.sql
 │   ├── 05_exception_report.sql
-│   ├── 06_reconciliation_status.sql
-│   └── 07_reporting_views.sql
+│   ├── 07_reporting_views.sql
 ├── documentation/
 │   ├── Data_Dictionary.md
 │   ├── Business_Rules.md
@@ -87,9 +86,6 @@ immutable, identifying fields, not fields expected to vary between systems.
 | Duplicate Transaction | ~284 | ~1.5% | Medium |
 | Null Amount in Bank | 381 | ~2% | High |
 
-*(Note: exception categories are not mutually exclusive — a single transaction
-can trigger more than one rule violation, e.g., a row with a NULL sender ID is
-counted both under "Missing" via the business key AND under a null-value check.)*
 
 ## Dashboard
 Two-page Power BI dashboard:
@@ -102,7 +98,6 @@ Two-page Power BI dashboard:
 See `/screenshots/` for dashboard images and `/powerbi/` for the full `.pbix` file.
 
 ## Documentation
-- [Data Dictionary](documentation/Data_Dictionary.md)
 - [Business Rules](documentation/Business_Rules.md)
 - [Corruption Log](documentation/Corruption_Log.md)
 
@@ -111,4 +106,4 @@ See `/screenshots/` for dashboard images and `/powerbi/` for the full `.pbix` fi
 - PaySim is synthetic data; balance/fraud patterns may not reflect real-world
   payment system behavior.
 - Corruption was injected programmatically for demonstration purposes; real
-  reconciliation breaks would need to be discovered, not engineered.
+  reconciliation breaks would need to be discovered.
