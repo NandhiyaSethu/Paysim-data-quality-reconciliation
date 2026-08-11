@@ -28,7 +28,7 @@ paysim-data-quality-reconciliation/
 │   ├── 03_data_corruption.sql
 │   ├── 04_business_key_and_reconciliation.sql
 │   ├── 05_exception_report.sql
-│   ├── 07_reporting_views.sql
+│   ├── 06_reporting_views.sql
 ├── documentation/
 │   ├── Data_Dictionary.md
 │   ├── Business_Rules.md
@@ -98,8 +98,8 @@ Two-page Power BI dashboard:
 See `/screenshots/` for dashboard images and `/powerbi/` for the full `.pbix` file.
 
 ## Documentation
-- [Business Rules](documentation/Business_Rules.md)
-- [Corruption Log](documentation/Corruption_Log.md)
+- [Business Rules](Business_Rules.md)
+- [Corruption Log](Corruption_Log.md)
 
 ## Limitations
 - Uses a 200,000-row random sample rather than the full ~6.3M-row dataset.
