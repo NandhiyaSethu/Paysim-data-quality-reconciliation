@@ -30,7 +30,6 @@ paysim-data-quality-reconciliation/
 │   ├── 05_exception_report.sql
 │   ├── 06_reporting_views.sql
 ├── documentation/
-│   ├── Data_Dictionary.md
 │   ├── Business_Rules.md
 │   └── Corruption_Log.md
 ├── powerbi/
