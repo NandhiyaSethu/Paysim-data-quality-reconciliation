@@ -8,13 +8,13 @@ independent systems recording the same events.
 |---|---|---|---|
 | 1 | Missing records | Deleted ~500 random rows | 500 |
 | 2 | Duplicate records | Duplicated ~300 random rows | 300 |
-| 3 | Amount mismatch | Reduced amount by 1% on a subset (`transaction_id % 500 = 0`) | 399 |
-| 4 | Null amount | Set `amount = NULL` on ~0.2% of rows | 412 |
-| 4b | Null sender ID | Set `nameOrig = NULL` on ~0.2% of rows | 419 |
-| 5 | Inconsistent casing | Lowercased `type` on ~2% of rows | 3,992 |
-| 6 | Leading/trailing whitespace | Added spaces around `type` on ~2% of rows (run twice by mistake, compounding on some rows) | ~3,900–4,000 |
-| 7 | Invalid category value | Set `type = 'PAYMENNT'` (typo) on ~0.1% of rows | 203 |
-| 8 | Corrupted fraud flag | Set `isFraud = 5` (invalid value) on ~0.1% of rows | 160 |
+| 3 | Amount mismatch | Reduced amount by 1% on a subset (`transaction_id % 500 = 0`) | 398 |
+| 4 | Null amount | Set `amount = NULL` on ~0.2% of rows | 381 |
+| 4b | Null sender ID | Set `nameOrig = NULL` on ~0.2% of rows | 411 |
+| 5 | Inconsistent casing | Lowercased `type` on ~2% of rows | 3,954 |
+| 6 | Leading/trailing whitespace | Added spaces around `type` on ~2% of rows (run twice, compounding on some rows) | ~3,900–4,000 |
+| 7 | Invalid category value | Set `type = 'PAYMENNT'` (typo) on ~0.1% of rows | 199 |
+| 8 | Corrupted fraud flag | Set `isFraud = 5` (invalid value) on ~0.1% of rows | 211 |
 
 ## Combined / Downstream Effects
 - Steps 5 and 6 together are captured under a single **"Inconsistent
