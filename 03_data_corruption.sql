@@ -36,7 +36,7 @@ SELECT COUNT(*) FROM bank_system;
 UPDATE bank_system
 SET amount = amount * 0.99
 WHERE transaction_id % 500 = 0;
--- 399 rows affected
+-- 398 rows affected
 
 
 --- Inserting Null Amounts randomly
